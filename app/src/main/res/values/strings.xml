@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TrueORFalse</string>
+    <string name="action_settings">Settings</string>
+    <string name="startGame">Start game</string>
+    <string name="GoToGIT">Go to GitHub</string>
+    <string name="choose">Choose the option!</string>
+    <string name="info">Go to App info</string>
+</resources>

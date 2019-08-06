@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" android:gravity="center" android:background="@android:color/darker_gray">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="@string/choose"
+                android:layout_width="241dp"
+                android:layout_height="wrap_content" android:id="@+id/startTextView" android:textSize="24sp"
+                android:textStyle="bold" android:layout_margin="5dp" android:padding="5dp" android:gravity="center"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            <Button
+                    android:text="@string/info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/goToInfo" android:layout_margin="5dp"
+                    android:background="@drawable/button_design_menu_start" android:padding="6dp"
+                    android:onClick="onClickInfo"/>
+            <Button
+                    android:text="@string/GoToGIT"
+                    android:onClick="onClickGIT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/startGIT" android:layout_margin="5dp"
+                    android:background="@drawable/button_design_menu_start" android:padding="6dp"/>
+        </LinearLayout>
+        <Button
+                android:text="@string/startGame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:id="@+id/goToGame" android:layout_margin="5dp"
+                android:background="@drawable/button_design_menu_start" android:padding="6dp"
+                android:layout_weight="1"/>
+    </LinearLayout>
+</LinearLayout>
