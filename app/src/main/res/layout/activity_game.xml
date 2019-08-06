@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@android:color/darker_gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".GameActivity" android:gravity="center"
+        android:orientation="vertical">
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/questionView" android:gravity="center"
+            android:padding="5dp" android:layout_margin="5dp" android:textSize="24sp" android:textStyle="bold|italic"/>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <Button
+                android:text="@string/t"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/trueB" android:layout_weight="1"
+                android:background="@drawable/button_design_menu_true" android:layout_margin="5dp"/>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/exitB"
+                android:background="@drawable/button_design_menu_exit"
+                android:layout_margin="5dp" android:text="@string/ex"/>
+        <Button
+                android:text="@string/f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/falseB" android:layout_weight="1"
+                android:background="@drawable/button_design_menu_false" android:layout_margin="5dp"/>
+    </LinearLayout>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/pointsView" android:layout_margin="5dp"
+            android:textStyle="bold|italic"/>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/notificationView" android:layout_margin="20dp"
+            android:gravity="center" android:padding="10dp" android:textStyle="bold|italic"/>
+</LinearLayout>

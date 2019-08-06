@@ -36,5 +36,9 @@
                 android:layout_height="match_parent" android:id="@+id/goToGame" android:layout_margin="5dp"
                 android:background="@drawable/button_design_menu_start" android:padding="6dp"
                 android:layout_weight="1"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/lastScre" android:layout_margin="10dp"
+                android:padding="5dp" android:textSize="18sp" android:textStyle="bold"/>
     </LinearLayout>
 </LinearLayout>

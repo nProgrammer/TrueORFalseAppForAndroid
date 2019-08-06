@@ -5,4 +5,7 @@
     <string name="GoToGIT">Go to GitHub</string>
     <string name="choose">Choose the option!</string>
     <string name="info">Go to App info</string>
+    <string name="t">True</string>
+    <string name="f">False</string>
+    <string name="ex">Exit</string>
 </resources>
