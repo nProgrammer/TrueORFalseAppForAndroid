@@ -21,19 +21,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val file = File("/data/data/wagner.norbert.gametrueorfalse/data.txt")
-        lastScre.setText("Your last score: " + file.readLines().toString())
-
-        goToGame.setOnClickListener{
-            val rankFile = File("/data/data/wagner.norbert.gametrueorfalse/data.txt").readLines()
-            val rankFull = rankFile[0].toInt()
-            if(rankFull < 10 || rankFull == null) {
-                val goToGame = Intent(applicationContext, GameActivity::class.java)
-                startActivity(goToGame)
-            }else if(rankFull >= 10){
-                val goToGame = Intent(applicationContext, LevelTwoActivity::class.java)
-                startActivity(goToGame)
-            }
+        var score = file.readLines()
+        var points = score[0].toInt()
+        if(points < 10) {
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". Your level is 1")
+        }else if(points <= 20) {
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". Your level is 2")
         }
+
     }
     // goToGIT button
     fun onClickGIT(v: View) {
@@ -47,4 +42,19 @@ class MainActivity : AppCompatActivity() {
         startActivity(goToInfo)
     }
 
+    override fun onResume() {
+        super.onResume()
+        // NEXT LEVELS
+        goToGame.setOnClickListener{
+            val rankFile = File("/data/data/wagner.norbert.gametrueorfalse/data.txt").readLines()
+            val rankFull = rankFile[0].toInt()
+            if(rankFull < 10 || rankFull == null) {
+            val goToGame = Intent(applicationContext, GameActivity::class.java)
+            startActivity(goToGame)
+            }else if(rankFull <= 20){
+                val goToGame = Intent(applicationContext, LevelTwoActivity::class.java)
+                startActivity(goToGame)
+            }
+        }
+    }
 }

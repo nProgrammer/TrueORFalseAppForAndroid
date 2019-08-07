@@ -16,18 +16,16 @@ class GameActivity : AppCompatActivity() {
         val maxQuest = 9 // maxQuest number (0-9)
         var numberQuest = 0 // what quest it is
         val toast = Toast.makeText(this, "SCORE SAVED!", Toast.LENGTH_SHORT) // toast on the end
-        questionView.setText(questions(numberQuest)) // writing question
-
+        questionView.setText(questionsLV1(numberQuest)) // writing question
         //TRUE BUTTON click listener
         trueB.setOnClickListener {
             //Good answer
             if (numberQuest == 1 || numberQuest == 2 || numberQuest == 4 || numberQuest == 7 || numberQuest == 8) {
 
                 score++
-                var points = doonFile(score)
-                pointsView.setText("Score: " + points)
+                pointsView.setText("Score: " + score)
                 numberQuest++
-                questionView.setText(questions(numberQuest))
+                questionView.setText(questionsLV1(numberQuest))
             } else if(score == 10 || numberQuest == 10){ //MAX questins or points
                 var points = doonFile(score)
                 notificationView.setText("You won! Backing to home")
@@ -44,9 +42,11 @@ class GameActivity : AppCompatActivity() {
                     questionView.setText("END!")
                     trueB.setText("END!")
                     falseB.setText("END!")
-
+                    score--
                 } else {
-                    questionView.setText(questions(numberQuest))
+                    score--
+                    pointsView.setText("Score: " + score)
+                    questionView.setText(questionsLV1(numberQuest))
                 }
             }
         }
@@ -56,7 +56,7 @@ class GameActivity : AppCompatActivity() {
                 score++
                 pointsView.setText("Score: " + score)
                 numberQuest++
-                questionView.setText(questions(numberQuest))
+                questionView.setText(questionsLV1(numberQuest))
 
             }else if(score == 10 || numberQuest > maxQuest){
                 var points = doonFile(score)
@@ -74,9 +74,11 @@ class GameActivity : AppCompatActivity() {
                     questionView.setText("END!")
                     trueB.setText("END!")
                     falseB.setText("END!")
-
+                    score--
                 } else {
-                    questionView.setText(questions(numberQuest))
+                    score--
+                    pointsView.setText("Score: " + score)
+                    questionView.setText(questionsLV1(numberQuest))
                 }
             }
 
