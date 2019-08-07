@@ -8,4 +8,7 @@
     <string name="t">True</string>
     <string name="f">False</string>
     <string name="ex">Exit</string>
+    <string name="author">It is my first serious project. I made it to train my skills. This app is full written in
+        Kotlin language.
+    </string>
 </resources>

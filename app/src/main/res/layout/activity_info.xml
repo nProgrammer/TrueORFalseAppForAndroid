@@ -7,5 +7,19 @@
         android:layout_height="match_parent"
         tools:context=".InfoActivity"
         android:orientation="vertical" android:gravity="center" android:background="@android:color/darker_gray">
-
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+    </LinearLayout>
+    <TextView
+            android:text="@string/author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/authorInfoView" android:gravity="center"
+            android:textSize="24sp" android:padding="10dp"/>
+    <Button
+            android:text="@string/GoToGIT"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/goToGIT"
+            android:background="@drawable/button_design_menu_start" android:onClick="onClickGIT"/>
 </LinearLayout>

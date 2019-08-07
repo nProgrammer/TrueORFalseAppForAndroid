@@ -11,13 +11,16 @@ class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game)
-        var points1 = File("/data/data/wagner.norbert.gametrueorfalse/data.txt").readLines()
-        var score = 0
-        val maxQuest = 9
-        var numberQuest = 0
-        val toast = Toast.makeText(this, "SCORE SAVED!", Toast.LENGTH_SHORT)
-        questionView.setText(questions(numberQuest))
+        var setClass = ""
+        var score = 0 // player score
+        val maxQuest = 9 // maxQuest number (0-9)
+        var numberQuest = 0 // what quest it is
+        val toast = Toast.makeText(this, "SCORE SAVED!", Toast.LENGTH_SHORT) // toast on the end
+        questionView.setText(questions(numberQuest)) // writing question
+
+        //TRUE BUTTON click listener
         trueB.setOnClickListener {
+            //Good answer
             if (numberQuest == 1 || numberQuest == 2 || numberQuest == 4 || numberQuest == 7 || numberQuest == 8) {
 
                 score++
@@ -25,8 +28,7 @@ class GameActivity : AppCompatActivity() {
                 pointsView.setText("Score: " + points)
                 numberQuest++
                 questionView.setText(questions(numberQuest))
-
-            }else if(score == 10 || numberQuest == 10){
+            } else if(score == 10 || numberQuest == 10){ //MAX questins or points
                 var points = doonFile(score)
                 notificationView.setText("You won! Backing to home")
                 Thread.sleep(1000)
@@ -34,7 +36,7 @@ class GameActivity : AppCompatActivity() {
                 toast.show()
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)
-            } else {
+            } else { //BAD answer
 
                 numberQuest++
                 if (numberQuest > maxQuest) {
@@ -90,31 +92,6 @@ class GameActivity : AppCompatActivity() {
         }
 
     }
+        //FUNCTION with questions
 
-    fun questions(numberQest: Int): String {
-        var x = numberQest
-        var quest = ""
-        if (x == 0) {
-            quest = "2+2*3 = 12" // False
-        }else if (x == 1) {
-            quest = "Android is dist of linux" //True
-        }else if (x == 2) {
-            quest = "5*5+3+4*2 = 36" //True
-        }else if(x == 3){
-            quest = "777 - 88 = 688" //False
-        }else if(x == 4){
-            quest = "Cetacean is mammal" //True
-        }else if(x == 5){
-            quest = "5^7 - 2 = 33" //False
-        }else if(x == 6){
-            quest = "Pseudopseudohypoparathyroidism is the longest word in English language" //False
-        }else if(x == 7){
-            quest = "554 - 7*4 - 3 * 3 = 507" //True
-        }else if(x == 8){
-            quest = "There are 1 420 000 000 Chinese in the world" // True
-        }else if(x == 9){
-            quest = "999 - 999*2 = 0" // False
-        }
-        return quest
-    }
 }

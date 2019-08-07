@@ -24,8 +24,15 @@ class MainActivity : AppCompatActivity() {
         lastScre.setText("Your last score: " + file.readLines().toString())
 
         goToGame.setOnClickListener{
-            val goToInfo = Intent(applicationContext, GameActivity::class.java)
-            startActivity(goToInfo)
+            val rankFile = File("/data/data/wagner.norbert.gametrueorfalse/data.txt").readLines()
+            val rankFull = rankFile[0].toInt()
+            if(rankFull < 10 || rankFull == null) {
+                val goToGame = Intent(applicationContext, GameActivity::class.java)
+                startActivity(goToGame)
+            }else if(rankFull >= 10){
+                val goToGame = Intent(applicationContext, LevelTwoActivity::class.java)
+                startActivity(goToGame)
+            }
         }
     }
     // goToGIT button
