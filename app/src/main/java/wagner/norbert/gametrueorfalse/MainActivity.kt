@@ -7,6 +7,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
@@ -49,9 +50,13 @@ class MainActivity : AppCompatActivity() {
             val rankFile = File("/data/data/wagner.norbert.gametrueorfalse/data.txt").readLines()
             val rankFull = rankFile[0].toInt()
             if(rankFull < 10 || rankFull == null) {
-            val goToGame = Intent(applicationContext, GameActivity::class.java)
-            startActivity(goToGame)
+                var tost = Toast.makeText(applicationContext, "Started level 1",Toast.LENGTH_SHORT)
+                tost.show()
+                val goToGame = Intent(applicationContext, GameActivity::class.java)
+                startActivity(goToGame)
             }else if(rankFull <= 20){
+                var tost = Toast.makeText(applicationContext, "Started level 2",Toast.LENGTH_SHORT)
+                tost.show()
                 val goToGame = Intent(applicationContext, LevelTwoActivity::class.java)
                 startActivity(goToGame)
             }
