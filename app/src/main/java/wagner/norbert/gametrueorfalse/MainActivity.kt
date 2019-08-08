@@ -25,9 +25,13 @@ class MainActivity : AppCompatActivity() {
         var score = file.readLines()
         var points = score[0].toInt()
         if(points < 10) {
-            lastScre.setText("Your last score: " + file.readLines().toString() + ". Your level is 1")
-        }else if(points <= 20) {
-            lastScre.setText("Your last score: " + file.readLines().toString() + ". Your level is 2")
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 1")
+        }else if(points < 20) {
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 2")
+        }else if(points >= 20) {
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 3")
+        }else if(points < 40) {
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 4")
         }
 
     }
@@ -46,18 +50,28 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         // NEXT LEVELS
-        goToGame.setOnClickListener{
+        goToGame.setOnClickListener {
             val rankFile = File("/data/data/wagner.norbert.gametrueorfalse/data.txt").readLines()
             val rankFull = rankFile[0].toInt()
-            if(rankFull < 10 || rankFull == null) {
-                var tost = Toast.makeText(applicationContext, "Started level 1",Toast.LENGTH_SHORT)
+            if (rankFull < 10 || rankFull == null) {
+                var tost = Toast.makeText(applicationContext, "Started level 1", Toast.LENGTH_SHORT)
                 tost.show()
                 val goToGame = Intent(applicationContext, GameActivity::class.java)
                 startActivity(goToGame)
-            }else if(rankFull <= 20){
-                var tost = Toast.makeText(applicationContext, "Started level 2",Toast.LENGTH_SHORT)
+            } else if (rankFull < 20) {
+                var tost = Toast.makeText(applicationContext, "Started level 2", Toast.LENGTH_SHORT)
                 tost.show()
                 val goToGame = Intent(applicationContext, LevelTwoActivity::class.java)
+                startActivity(goToGame)
+            } else if (rankFull < 30) {
+                var tost = Toast.makeText(applicationContext, "Started level 3", Toast.LENGTH_SHORT)
+                tost.show()
+                val goToGame = Intent(applicationContext, LevelThreeActivity::class.java)
+                startActivity(goToGame)
+            }else if (rankFull < 40) {
+                var tost = Toast.makeText(applicationContext, "Started level 4", Toast.LENGTH_SHORT)
+                tost.show()
+                val goToGame = Intent(applicationContext, LevelFourActivity::class.java)
                 startActivity(goToGame)
             }
         }
