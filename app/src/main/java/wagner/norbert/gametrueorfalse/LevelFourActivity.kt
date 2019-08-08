@@ -55,7 +55,6 @@ class LevelFourActivity : AppCompatActivity() {
         }
         falseB.setOnClickListener {
             if (numberQuest == 4 || numberQuest == 6 || numberQuest == 8 || numberQuest == 9) {
-
                 score++
                 pointsView.setText("Score: " + score)
                 numberQuest++
@@ -87,7 +86,6 @@ class LevelFourActivity : AppCompatActivity() {
                 }
             }
         }
-
         exitB.setOnClickListener{
             var points = doonFile(score)
             Thread.sleep(1000)
@@ -96,7 +94,5 @@ class LevelFourActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
-
 }

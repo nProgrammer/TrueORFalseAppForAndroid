@@ -11,17 +11,17 @@ class LevelThreeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_level_three)
-        var setClass = ""
+
         var score = 20 // player score
-        val maxQuest = 9 // maxQuest number (0-9)
-        var numberQuest = 0 // what quest it is
+        var numberQuest = 0
         val toast = Toast.makeText(this, "SCORE SAVED!", Toast.LENGTH_SHORT) // toast on the end
+
         questionView.setText(questionsLV3(numberQuest)) // writing question
+
         //TRUE BUTTON click listener
         trueB.setOnClickListener {
             //Good answer
             if (numberQuest == 0 || numberQuest == 1 || numberQuest == 3 || numberQuest == 5 || numberQuest == 7 ) {
-
                 score++
                 pointsView.setText("Score: " + score)
                 numberQuest++
@@ -87,7 +87,6 @@ class LevelThreeActivity : AppCompatActivity() {
                 }
             }
         }
-
         exitB.setOnClickListener{
             var points = doonFile(score)
             Thread.sleep(1000)
@@ -96,7 +95,5 @@ class LevelThreeActivity : AppCompatActivity() {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
-
 }

@@ -5,8 +5,8 @@ package wagner.norbert.gametrueorfalse
 * Contact me wagner.norbert277@gmail.com
 */
 
-fun questionsLV3(numberQest: Int): String {
-    var x = numberQest
+fun questionsLV3(numberQuest: Int): String {
+    var x = numberQuest
     var quest = ""
     if (x == 0) {
         quest = "Kotlin works on JVM" // True

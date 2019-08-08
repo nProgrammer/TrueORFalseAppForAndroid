@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         }else if(points < 40) {
             lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 4")
         }else if(points == 40){
-            lastScre.setText("Your last score: " + file.readLines().toString() + ". You end game. Now you will start again from 1 level")
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". You finished the game. Now you will start again from 1 level")
         }
 
     }
