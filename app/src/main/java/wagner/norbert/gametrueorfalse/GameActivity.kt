@@ -37,6 +37,7 @@ class GameActivity : AppCompatActivity() {
                     questionView.setText(questionsLV1(numberQuest))
                 }
                 } else{
+                        numberQuest++
                         score--
                         pointsView.setText("Score: " + score)
                         questionView.setText(questionsLV1(numberQuest))
@@ -70,6 +71,7 @@ class GameActivity : AppCompatActivity() {
                         questionView.setText(questionsLV1(numberQuest))
                     }
                     }  else {
+                            numberQuest++
                             score--
                             pointsView.setText("Score: " + score)
                             questionView.setText(questionsLV1(numberQuest))
