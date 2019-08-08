@@ -13,7 +13,7 @@ fun questionsLV3(numberQest: Int): String {
     }else if (x == 1) {
         quest = "Java was invented in 1995" //True
     }else if (x == 2) {
-        quest = "Android Studio is Kotlin/Java IDE for writing application for Android" //True
+        quest = "Android Studio is Kotlin/Swift IDE for writing application for Android" //False
     }else if(x == 3){
         quest = "Angular is JavaScript framework" //True
     }else if(x == 4){

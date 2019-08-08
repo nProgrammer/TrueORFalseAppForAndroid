@@ -28,10 +28,12 @@ class MainActivity : AppCompatActivity() {
             lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 1")
         }else if(points < 20) {
             lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 2")
-        }else if(points >= 20) {
+        }else if(points < 30) {
             lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 3")
         }else if(points < 40) {
             lastScre.setText("Your last score: " + file.readLines().toString() + ". Level 4")
+        }else if(points == 40){
+            lastScre.setText("Your last score: " + file.readLines().toString() + ". You end game. Now you will start again from 1 level")
         }
 
     }
@@ -72,6 +74,11 @@ class MainActivity : AppCompatActivity() {
                 var tost = Toast.makeText(applicationContext, "Started level 4", Toast.LENGTH_SHORT)
                 tost.show()
                 val goToGame = Intent(applicationContext, LevelFourActivity::class.java)
+                startActivity(goToGame)
+            }else if (rankFull == 40) {
+                var tost = Toast.makeText(applicationContext, "Started level 1", Toast.LENGTH_SHORT)
+                tost.show()
+                val goToGame = Intent(applicationContext, GameActivity::class.java)
                 startActivity(goToGame)
             }
         }

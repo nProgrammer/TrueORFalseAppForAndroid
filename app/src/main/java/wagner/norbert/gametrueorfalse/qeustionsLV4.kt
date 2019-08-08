@@ -19,7 +19,7 @@ fun questionsLV4(numberQest: Int): String {
     }else if(x == 4){
         quest = ".NET is JAVA framework" //False
     }else if(x == 5){
-        quest = "Vue is JavaScript" //True
+        quest = "Vue is JavaScript framework" //True
     }else if(x == 6){
         quest = "In Kotlin we're writing switchCase() instead of switch()" //False
     }else if(x == 7){

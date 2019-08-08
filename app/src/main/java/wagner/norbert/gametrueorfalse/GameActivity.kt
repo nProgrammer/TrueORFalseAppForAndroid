@@ -26,74 +26,77 @@ class GameActivity : AppCompatActivity() {
                 pointsView.setText("Score: " + score)
                 numberQuest++
                 questionView.setText(questionsLV1(numberQuest))
-            } else if(score == 10 || numberQuest == 10){ //MAX questins or points
-                var points = doonFile(score)
-                notificationView.setText("You won! Backing to home")
-                Thread.sleep(1000)
-                score = 0
-                toast.show()
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivity(intent)
-            } else { //BAD answer
-
-                numberQuest++
-                if (numberQuest > maxQuest) {
-                    notificationView.setText("END!")
-                    questionView.setText("END!")
-                    trueB.setText("END!")
-                    falseB.setText("END!")
-                    score--
-                } else {
-                    score--
-                    pointsView.setText("Score: " + score)
+                if (numberQuest == 10) { //MAX questins or points
+                    var points = doonFile(score)
+                    notificationView.setText("You won! Backing to home")
+                    Thread.sleep(1000)
+                    score = 0
+                    toast.show()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
                     questionView.setText(questionsLV1(numberQuest))
                 }
-            }
-        }
-        falseB.setOnClickListener {
-            if (numberQuest == 0 || numberQuest == 3 || numberQuest == 5 || numberQuest == 6 || numberQuest == 9) {
+                } else{
+                        score--
+                        pointsView.setText("Score: " + score)
+                        questionView.setText(questionsLV1(numberQuest))
+                    if (numberQuest == 10) { //MAX questins or points
+                        var points = doonFile(score)
+                        notificationView.setText("You won! Backing to home")
+                        Thread.sleep(1000)
+                        score = 0
+                        toast.show()
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                        questionView.setText(questionsLV1(numberQuest))
+                    }
+                }
+                }
+            falseB.setOnClickListener {
+                if (numberQuest == 0 || numberQuest == 3 || numberQuest == 5 || numberQuest == 6 || numberQuest == 9) {
 
-                score++
-                pointsView.setText("Score: " + score)
-                numberQuest++
-                questionView.setText(questionsLV1(numberQuest))
-
-            }else if(score == 10 || numberQuest > maxQuest){
-                var points = doonFile(score)
-                notificationView.setText("You won! Backing to home")
-                Thread.sleep(1000)
-                toast.show()
-                score = 0
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivity(intent)
-            } else {
-
-                numberQuest++
-                if (numberQuest > maxQuest) {
-                    notificationView.setText("END!")
-                    questionView.setText("END!")
-                    trueB.setText("END!")
-                    falseB.setText("END!")
-                    score--
-                } else {
-                    score--
+                    score++
+                    numberQuest++
                     pointsView.setText("Score: " + score)
                     questionView.setText(questionsLV1(numberQuest))
+                    if (numberQuest == 10) { //MAX questins or points
+                        var points = doonFile(score)
+                        notificationView.setText("You won! Backing to home")
+                        Thread.sleep(1000)
+                        score = 0
+                        toast.show()
+                        val intent = Intent(applicationContext, MainActivity::class.java)
+                        startActivity(intent)
+                        questionView.setText(questionsLV1(numberQuest))
+                    }
+                    }  else {
+                            score--
+                            pointsView.setText("Score: " + score)
+                            questionView.setText(questionsLV1(numberQuest))
+                        if (numberQuest == 10) { //MAX questins or points
+                            var points = doonFile(score)
+                            notificationView.setText("You won! Backing to home")
+                            Thread.sleep(1000)
+                            score = 0
+                            toast.show()
+                            val intent = Intent(applicationContext, MainActivity::class.java)
+                            startActivity(intent)
+                            questionView.setText(questionsLV1(numberQuest))
+                        }
+                        }
+                    }
+
+
+                exitB.setOnClickListener {
+                    var points = doonFile(score)
+                    Thread.sleep(1000)
+                    score = 0
+                    toast.show()
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
                 }
+
             }
-
-        }
-
-        exitB.setOnClickListener{
-            var points = doonFile(score)
-            Thread.sleep(1000)
-            score = 0
-            toast.show()
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivity(intent)
-        }
-
-    }
-        //FUNCTION with questions
+            //FUNCTION with questions
 
 }
