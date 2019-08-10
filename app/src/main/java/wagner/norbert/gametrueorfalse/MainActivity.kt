@@ -12,9 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
-/*
-* Made by nProgrammer (Norbert Wagner)
-*/
 
 class MainActivity : AppCompatActivity() {
 
