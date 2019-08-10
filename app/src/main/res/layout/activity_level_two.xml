@@ -10,6 +10,11 @@
         android:orientation="vertical">
     <TextView
             android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/atQuest" android:padding="5dp"
+            android:layout_margin="5dp" android:textStyle="bold|italic"
+            android:gravity="center"/>
+    <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" android:id="@+id/questionView" android:gravity="center"
             android:padding="5dp" android:layout_margin="50dp" android:textSize="24sp" android:textStyle="bold|italic"/>
     <TextView

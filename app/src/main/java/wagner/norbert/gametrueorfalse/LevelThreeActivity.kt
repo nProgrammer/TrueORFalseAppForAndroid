@@ -26,6 +26,7 @@ class LevelThreeActivity : AppCompatActivity() {
                 pointsView.setText("Score: " + score)
                 numberQuest++
                 questionView.setText(questionsLV3(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     notificationView.setText("You won! Backing to home")
@@ -41,6 +42,7 @@ class LevelThreeActivity : AppCompatActivity() {
                 score--
                 pointsView.setText("Score: " + score)
                 questionView.setText(questionsLV3(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     notificationView.setText("You won! Backing to home")
@@ -60,6 +62,7 @@ class LevelThreeActivity : AppCompatActivity() {
                 pointsView.setText("Score: " + score)
                 numberQuest++
                 questionView.setText(questionsLV3(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     notificationView.setText("You won! Backing to home")
@@ -75,6 +78,7 @@ class LevelThreeActivity : AppCompatActivity() {
                 score--
                 pointsView.setText("Score: " + score)
                 questionView.setText(questionsLV3(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     notificationView.setText("You won! Backing to home")

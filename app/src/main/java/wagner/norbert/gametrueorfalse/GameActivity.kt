@@ -25,6 +25,7 @@ class GameActivity : AppCompatActivity() {
                 pointsView.setText("Score: " + score)
                 numberQuest++
                 questionView.setText(questionsLV1(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     notificationView.setText("You won! Backing to home")
@@ -40,6 +41,7 @@ class GameActivity : AppCompatActivity() {
                 score--
                 pointsView.setText("Score: " + score)
                 questionView.setText(questionsLV1(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     val intent = Intent(applicationContext, MainActivity::class.java)
@@ -60,7 +62,7 @@ class GameActivity : AppCompatActivity() {
                 numberQuest++
                 pointsView.setText("Score: " + score)
                 questionView.setText(questionsLV1(numberQuest))
-
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questions
                     var points = doonFile(score)
                     notificationView.setText("You won! Backing to home")
@@ -76,6 +78,7 @@ class GameActivity : AppCompatActivity() {
                 score--
                 pointsView.setText("Score: " + score)
                 questionView.setText(questionsLV1(numberQuest))
+                atQuest.setText("$numberQuest / 10")
                 if (numberQuest == 10) { //MAX questins or points
                     var points = doonFile(score)
                     val intent = Intent(applicationContext, MainActivity::class.java)
