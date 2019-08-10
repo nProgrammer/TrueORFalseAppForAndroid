@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".InfoActivity"
-        android:orientation="vertical" android:gravity="center" android:background="@android:color/darker_gray">
+        android:orientation="vertical" android:gravity="center" android:background="@drawable/backgound_design">
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"

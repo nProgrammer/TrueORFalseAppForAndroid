@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" android:gravity="center" android:background="@android:color/darker_gray">
+        android:layout_height="match_parent" android:gravity="center" android:background="@drawable/backgound_design">
 
     <LinearLayout
             android:orientation="vertical"
@@ -10,23 +11,23 @@
             android:layout_height="wrap_content">
         <TextView
                 android:text="@string/choose"
-                android:layout_width="241dp"
+                android:layout_width="278dp"
                 android:layout_height="wrap_content" android:id="@+id/startTextView" android:textSize="24sp"
                 android:textStyle="bold" android:layout_margin="5dp" android:padding="5dp" android:gravity="center"/>
         <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:gravity="center">
             <Button
                     android:text="@string/info"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/goToInfo" android:layout_margin="5dp"
+                    android:layout_width="107dp"
+                    android:layout_height="match_parent" android:id="@+id/goToInfo" android:layout_margin="5dp"
                     android:background="@drawable/button_design_menu_start" android:padding="6dp"
                     android:onClick="onClickInfo"/>
             <Button
                     android:text="@string/GoToGIT"
                     android:onClick="onClickGIT"
-                    android:layout_width="wrap_content"
+                    android:layout_width="107dp"
                     android:layout_height="wrap_content" android:id="@+id/startGIT" android:layout_margin="5dp"
                     android:background="@drawable/button_design_menu_start" android:padding="6dp"/>
         </LinearLayout>
@@ -37,7 +38,7 @@
                 android:background="@drawable/button_design_menu_start" android:padding="6dp"
                 android:layout_weight="1"/>
         <TextView
-                android:layout_width="match_parent"
+                android:layout_width="268dp"
                 android:layout_height="97dp" android:id="@+id/lastScre" android:layout_margin="10dp"
                 android:padding="5dp" android:textSize="18sp" android:textStyle="bold"/>
     </LinearLayout>
