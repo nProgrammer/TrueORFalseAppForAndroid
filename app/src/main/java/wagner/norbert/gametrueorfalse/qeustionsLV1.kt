@@ -21,7 +21,7 @@ fun questionsLV1(numberQest: Int): String {
     }else if(x == 5){
         quest = "Alexa echo was made by Google" //False
     }else if(x == 6){
-        quest = "You can write IOS app in Kotlin" //False
+        quest = "You can't write IOS app in Kotlin" //False
     }else if(x == 7){
         quest = "Swift is officially IOS language" //True
     }else if(x == 8){
